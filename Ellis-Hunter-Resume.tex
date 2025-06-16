@@ -18,6 +18,7 @@
 \definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
 \usepackage{enumitem} % for customizing lists
 \usepackage{amsmath} % for math
+\boldmath
 \usepackage[
     pdftitle={Hunter Ellis's Resume},
     pdfauthor={Hunter Ellis},
@@ -36,7 +37,7 @@
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 \usepackage{datetime}
 
-% Ensure that generate pdf is machine readable/ATS parsable:
+% Ensure that generated pdf is machine readable/ATS parsable:
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
@@ -166,12 +167,12 @@
     \end{threecolentry}
     \hrule
     \kern 3.0 pt%
-    Electrical/Computer Engineer interested in the intersection of control systems, robotics, and autonomy. 
+    Electrical and Computer Engineer passionate about the intersection of control systems, robotics, and autonomy. 
     \section{Education}
     \begin{twocolentry}{{May 2025}\\\textit{Blacksburg, Virginia}}
         \textbf{Master of Science in Computer Engineering} (Accelerated Master's Program)\\
         Virginia Tech -- Software and Machine Intelligence \\
-    \quad\quad\textit{Advisers: }\hrefWithoutArrow{https://coolautonomylab.github.io/members/thinh.html}{{\textit{Dr.Thinh Doan (UT Austin)}}} and \hrefWithoutArrow{https://filebox.ece.vt.edu/~mhsiao/}{{\textit{Dr.Michael Hsiao (Virginia Tech)}}}\\
+    \quad\quad\textit{Advisers: }\hrefWithoutArrow{https://coolautonomylab.github.io/members/thinh.html}{{\textit{Dr. Thinh Doan (UT Austin)}}} and \hrefWithoutArrow{https://filebox.ece.vt.edu/~mhsiao/}{{\textit{Dr. Michael Hsiao (Virginia Tech)}}}\\
     \end{twocolentry}
     \kern 3.0 pt%
     \begin{twocolentry}{{May 2024}\\\textit{Blacksburg, Virginia}}
@@ -180,13 +181,13 @@
     \end{twocolentry}
     
     \section{Technical Experience}
-        \textbf{Virginia Tech \boldmath$\cdot$ Robotics Research}\\
+    \textbf{Virginia Tech $\cdot$ Control, Optimization, and Online Learning for Autonomy Lab}\\
     \begin{twocolentry}{{Aug 2023 -- May 2025} \\\textit{Blacksburg, Virginia}}
         \textbf{\textit{Robotics Researcher}}\\
         \begin{onecolentry}
             \begin{highlights}
-                \item Developing a 6-axis robotic manipulator and an accompanying ROS2–Gazebo \& MuJoCo simulation using Gymnasium for deploying custom reinforcement learning algorithms.
-                \item Integrating CNN-based object detection (YOLOv8), RNN-based language parsing, symbolic reasoning, and a DDPG-based reinforcement learning policy for robotic manipulation tasks.
+                \item Built a 6-DOF robotic arm and accompanying ROS2–Gazebo \& MuJoCo simulation environments for training, evaluating, and deploying custom control algorithms.
+                \item Integrated object detection (YOLOv8), natural language processing, symbolic reasoning, and a DDPG-based reinforcement learning policy for robotic manipulation tasks.
             \end{highlights}
         \end{onecolentry}
     \end{twocolentry}
@@ -194,28 +195,28 @@
         \textbf{\textit{Graduate Teaching Assistant}}\\
         \begin{onecolentry}
             \begin{highlights}
-            \item Teaching fundamental concepts in linear systems theory and digital signal processing, including Laplace Transforms, Z-Transforms, system stability, and FIR \& IIR filter design.
-            \item Assisting with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI MSP432 development boards.
+            \item Taught fundamental concepts in linear systems theory and digital signal processing, including Laplace Transforms, Z-Transforms, system stability, and FIR \& IIR filter design.
+            \item Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI MSP432 development boards.
             \end{highlights}
         \end{onecolentry}
     \end{twocolentry}
     \kern 3.0 pt%
-    \textbf{Jacobs Space Exploration Group \boldmath$\cdot$ Mars Ascent Vehicle (MAV)}\\
-\begin{twocolentry}{{May 2024 -- Aug 2024} \\\textit{Huntsville, Alabama \\ (Merrit Island, Florida)}}
+    \textbf{Jacobs Space Exploration Group $\cdot$ Mars Ascent Vehicle (MAV)}\\
+    \begin{twocolentry}{{May 2024 -- Aug 2024} \\\textit{Huntsville, Alabama \\ (Merrit Island, Florida)}}
     \textbf{\textit{Thrust Vector Control Intern}}\\
         \begin{onecolentry}
             \begin{highlights}
-            \item Developed thrust vector control testing hardware and software for NASA's Active Inertial Load Simulator at the Marshall Space Flight Center.
-            \item Created and ran tests to develop a mathematical model of an electro-mechanical actuator -- used Python, MATLAB, and LabView.
-            \item Derived control algorithms for a load-simulating actuator, in Simulink, to simulate external loads placed on the Mars Ascent Vehicle's thrust vector control actuators during flight. 
-            \item Designed and integrated IIR filters to remove high frequency noise from a load cell and linear variable differential transformer (LVDT).
+            \item Developed thrust vector control testing hardware and software for NASA's Active Inertial Load (HIL) Simulator at the Marshall Space Flight Center.
+            \item Created and ran tests to develop a mathematical model of an electro-mechanical actuator -- used Python, MATLAB, and LabVIEW.
+            \item Derived control algorithms for a load-simulating actuator, in Simulink, to simulate external loads placed on the thrust vector control actuators during flight. 
+            \item Integrated IIR filters to reduce high frequency noise from a load cell and linear variable differential transformer (LVDT).
             \end{highlights}
         \end{onecolentry}
     \end{twocolentry}
     \kern 3.0 pt%
-        \textbf{Grenoble Electrical Engineering Laboratory \boldmath$\cdot$ Microgrid Inverters}\\
+\textbf{Grenoble Electrical Engineering Laboratory} $\cdot$ Microgrid Inverters\\
     \begin{twocolentry}{{Jun 2023 -- Aug 2023}\\ \textit{Grenoble, France}}
-        \textbf{\textit{Control Systems Research Intern}}\\
+        \textbf{\textit{Research Intern}}\\
         \begin{onecolentry}
             \begin{highlights}
             \item Researched inverter control systems -- designed to be robust to islanding events and avoid future infrastructure problems on the French power grid.
@@ -224,7 +225,7 @@
         \end{onecolentry}
     \end{twocolentry}
     \kern 3.0 pt%
-        \textbf{Naval Surface Warfare Center (Carderock Division) \boldmath$\cdot$ Hospital Sea Trains}\\
+\textbf{Naval Surface Warfare Center (Carderock Division)} $\cdot$ Hospital Sea Trains\\
     \begin{twocolentry}{{Jun 2022 -- Aug 2022}\\\textit{West Bethesda, Maryland}}
         \textbf{\textit{Concept Research Intern}}\\
         \begin{onecolentry}
@@ -240,11 +241,11 @@
     \textbf{Hardware: }PCB Design and Assembly, Breadboarding, Computer Architecture, Oscilloscope, Multimeter, 3D-Printing\\ 
     \section{Projects}
     \begin{twocolentry}{{Aug 2024 -- Present}\\}
-        \hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{6-Axis Robotic Arm} \faExternalLink}
+        \hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{6-DOF Robot Arm} \faExternalLink}
         \begin{onecolentry}
             \begin{highlights}
             \item 3D printed robot arm, built using stepper motors and pulleys.
-            \item ROS2 Jazzy control and Gazebo Harmonic simulation.
+            \item Implemented ROS2 Jazzy control and Gazebo Harmonic simulation.
             \end{highlights}
         \end{onecolentry}
     \end{twocolentry}
@@ -263,7 +264,7 @@
         \hrefWithoutArrow{https://ellishw.tech/projects/closed-loop-stepper/}{\textbf{Closed Loop Stepper Motor} \faExternalLink}
         \begin{onecolentry}
             \begin{highlights}
-            \item Backdrivable stepper motor driver using closed loop control and a magnetic encoder for feedback.
+            \item Backdrivable stepper motor driver using closed-loop control and a magnetic encoder for feedback.
             \item 4-layer PCB mounts to the back of the motor with CAN and power connections.
             \end{highlights}
         \end{onecolentry}
