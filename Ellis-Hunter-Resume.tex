@@ -3,12 +3,12 @@
 % Packages:
 \RequirePackage{fontawesome}
 \usepackage[
-    ignoreheadfoot, % set margins without considering header and footer
-    top=1.0 cm, % seperation between body and page edge from the top
-    bottom=1.0 cm, % seperation between body and page edge from the bottom
-    left=1.2 cm, % seperation between body and page edge from the left
-    right=1.2 cm, % seperation between body and page edge from the right
-    footskip=1.0 cm, % seperation between body and footer
+ignoreheadfoot, % set margins without considering header and footer
+top=1.0 cm, % seperation between body and page edge from the top
+bottom=1.0 cm, % seperation between body and page edge from the bottom
+left=1.2 cm, % seperation between body and page edge from the left
+right=1.2 cm, % seperation between body and page edge from the right
+footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
@@ -20,11 +20,11 @@
 \usepackage{amsmath} % for math
 \boldmath
 \usepackage[
-    pdftitle={Hunter Ellis's Resume},
-    pdfauthor={Hunter Ellis},
-    pdfcreator={LaTeX with RenderCV},
-    colorlinks=true,
-    urlcolor=primaryColor
+pdftitle={Hunter Ellis's Resume},
+pdfauthor={Hunter Ellis},
+pdfcreator={LaTeX with RenderCV},
+colorlinks=true,
+urlcolor=primaryColor
 ]{hyperref} % for links, metadata and bookmarks
 \usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
@@ -36,6 +36,8 @@
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 \usepackage{datetime}
+\usepackage{lipsum}
+
 
 % Ensure that generated pdf is machine readable/ATS parsable:
 \ifPDFTeX
@@ -43,10 +45,13 @@
     \pdfgentounicode=1
     \usepackage[T1]{fontenc}
     \usepackage[utf8]{inputenc}
-    \usepackage{lmodern}
+    % \usepackage{lmodern}
 \fi
 
-\usepackage{charter}
+% Fonts
+% \usepackage{charter}
+% \usepackage[sfdefault]{arimo}
+\usepackage{Archivo}
 
 % Some settings:
 \raggedright
@@ -79,9 +84,9 @@
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=0.25 cm + 10pt
-    ]
-}{
-    \end{itemize}
+        ]
+    }{
+\end{itemize}
 } % new environment for highlights
 
 
@@ -92,18 +97,18 @@
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=10pt
-    ]
-}{
-    \end{itemize}
+        ]
+    }{
+\end{itemize}
 } % new environment for highlights for bullet entries
 
 \newenvironment{onecolentry}{
     \begin{adjustwidth}{
-        0 cm + 0.00001 cm
+            0 cm + 0.00001 cm
+        }{
+            0 cm + 0.00001 cm
+        }
     }{
-        0 cm + 0.00001 cm
-    }
-}{
     \end{adjustwidth}
 } % new environment for one column entries
 
@@ -112,8 +117,8 @@
     \def\secondColumn{#2}
     \setcolumnwidth{\fill, 4.5 cm}
     \begin{paracol}{2}
-}{
-    \switchcolumn \raggedleft \secondColumn
+    }{
+        \switchcolumn \raggedleft \secondColumn
     \end{paracol}
     \endonecolentry
 } % new environment for two column entries
@@ -121,16 +126,16 @@
 \newenvironment{threecolentry}[3][]{
     \onecolentry
     \def\thirdColumn{#3}
-    \setcolumnwidth{, \fill, \fill, \fill}
+    \setcolumnwidth{1.5\fill, 3\fill, 1.5\fill}
     \begin{paracol}{3}
-    {\raggedright #2} \switchcolumn
-    \begin{center}  % center the middle column content
-}{
-    \end{center}
-    \switchcolumn \raggedleft \thirdColumn
+        {\raggedright #2} \switchcolumn
+        \begin{center}
+        }{
+        \end{center}
+        \switchcolumn \raggedleft \thirdColumn
     \end{paracol}
     \endonecolentry
-} % new environment for three column entries
+}
 
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\linespread{1.5}
@@ -142,141 +147,167 @@
 \let\hrefWithoutArrow\href
 
 \begin{document}
-    \newcommand{\AND}{\unskip
-        \cleaders\copy\ANDbox\hskip\wd\ANDbox
-        \ignorespaces
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+\begin{threecolentry}
+    {
+        Atlanta, Georgia\\
+        \hrefWithoutArrow{tel:+1-703-953-6963}{(703) 953-6963}\\
+        \hrefWithoutArrow{mailto:elliswhunter@gmail.com}{elliswhunter@gmail.com}
     }
-    \newsavebox\ANDbox
-    \sbox\ANDbox{$|$}
-    \begin{threecolentry}
-        {
-            Herndon, Virginia\\
-            \hrefWithoutArrow{tel:+1-703-953-6963}{(703) 953-6963}\\
-            \hrefWithoutArrow{mailto:elliswhunter@gmail.com}{elliswhunter@gmail.com}
-        }
-        {
-            \hrefWithoutArrow{https://ellishw.tech}{{ellishw.tech}}\\
-            \hrefWithoutArrow{https://github.com/hunterwellis}{{github.com/hunterwellis}}\\
-            \hrefWithoutArrow{https://www.linkedin.com/in/ellishw/}{linkedin.com/in/ellishw}
-        }
-        {
-            \Huge\textbf{{Hunter Ellis}}\\
-            \kern 3.0 pt%
-            \LARGE{\textbf{Electrical \& Computer Engineer}}
-        }
-    \end{threecolentry}
-    \hrule
-    \kern 3.0 pt%
-    Electrical and Computer Engineer passionate about the intersection of control systems, robotics, and autonomy. 
-    \section{Education}
-    \begin{twocolentry}{{May 2025}\\\textit{Blacksburg, Virginia}}
-        \textbf{Master of Science in Computer Engineering} (Accelerated Master's Program)\\
-        Virginia Tech -- Software and Machine Intelligence \\
-    \quad\quad\textit{Advisers: }\hrefWithoutArrow{https://coolautonomylab.github.io/members/thinh.html}{{\textit{Dr. Thinh Doan (UT Austin)}}} and \hrefWithoutArrow{https://filebox.ece.vt.edu/~mhsiao/}{{\textit{Dr. Michael Hsiao (Virginia Tech)}}}\\
-    \end{twocolentry}
-    \kern 3.0 pt%
-    \begin{twocolentry}{{May 2024}\\\textit{Blacksburg, Virginia}}
-        \textbf{Bachelor of Science in Electrical \& Computer Engineering} (double major)\\
-        Virginia Tech -- Control Systems and Machine Learning
-    \end{twocolentry}
-    
-    \section{Technical Experience}
-    \textbf{Virginia Tech $\cdot$ Control, Optimization, and Online Learning for Autonomy Lab}\\
-    \begin{twocolentry}{{Aug 2023 -- May 2025} \\\textit{Blacksburg, Virginia}}
-        \textbf{\textit{Robotics Researcher}}\\
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Built a 6-DOF robotic arm and accompanying ROS2–Gazebo \& MuJoCo simulation environments for training, evaluating, and deploying custom control algorithms.
-                \item Integrated object detection (YOLOv8), natural language processing, symbolic reasoning, and a DDPG-based reinforcement learning policy for robotic manipulation tasks.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \begin{twocolentry}{{Aug 2024 -- May 2025} \\\textit{Blacksburg, Virginia}}
-        \textbf{\textit{Graduate Teaching Assistant}}\\
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Taught fundamental concepts in linear systems theory and digital signal processing, including Laplace Transforms, Z-Transforms, system stability, and FIR \& IIR filter design.
-            \item Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI MSP432 development boards.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \kern 3.0 pt%
-    \textbf{Jacobs Space Exploration Group $\cdot$ Mars Ascent Vehicle (MAV)}\\
-    \begin{twocolentry}{{May 2024 -- Aug 2024} \\\textit{Huntsville, Alabama \\ (Merrit Island, Florida)}}
-    \textbf{\textit{Thrust Vector Control Intern}}\\
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Developed thrust vector control testing hardware and software for NASA's Active Inertial Load (HIL) Simulator at the Marshall Space Flight Center.
-            \item Created and ran tests to develop a mathematical model of an electro-mechanical actuator -- used Python, MATLAB, and LabVIEW.
-            \item Derived control algorithms for a load-simulating actuator, in Simulink, to simulate external loads placed on the thrust vector control actuators during flight. 
-            \item Integrated IIR filters to reduce high frequency noise from a load cell and linear variable differential transformer (LVDT).
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \kern 3.0 pt%
-\textbf{Grenoble Electrical Engineering Laboratory} $\cdot$ Microgrid Inverters\\
-    \begin{twocolentry}{{Jun 2023 -- Aug 2023}\\ \textit{Grenoble, France}}
-        \textbf{\textit{Research Intern}}\\
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Researched inverter control systems -- designed to be robust to islanding events and avoid future infrastructure problems on the French power grid.
-            \item Simulated neutral point capacitive and balancing topologies using 4-leg inverters in Simulink. Tested PI control, PR control, Clarke and Park Transforms with HIL simulations.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \kern 3.0 pt%
-\textbf{Naval Surface Warfare Center (Carderock Division)} $\cdot$ Hospital Sea Trains\\
-    \begin{twocolentry}{{Jun 2022 -- Aug 2022}\\\textit{West Bethesda, Maryland}}
-        \textbf{\textit{Concept Research Intern}}\\
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Developed concept hospital sea-train designs at the Center for Innovation in Ship Design and estimated fuel consumption and electrical power loads of the concept sea-trains.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \section{Skills}
-    \textbf{Software: }C/C++, Python, MATLAB, Simulink, GNU/Linux, Git, ROS2, Gazebo, Make, CMake, Labview, Qt,\\
-    \quad\quad\quad\quad\ \ \ PyTorch, OpenCV, \LaTeX, Verilog, FreeRTOS, Autodesk Inventor (Certified), SolidWorks, Rhino\\
-    \kern 3.0 pt%
-    \textbf{Hardware: }PCB Design and Assembly, Breadboarding, Computer Architecture, Oscilloscope, Multimeter, 3D-Printing\\ 
-    \section{Projects}
-    \begin{twocolentry}{{Aug 2024 -- Present}\\}
-        \hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{6-DOF Robot Arm} \faExternalLink}
-        \begin{onecolentry}
-            \begin{highlights}
-            \item 3D printed robot arm, built using stepper motors and pulleys.
-            \item Implemented ROS2 Jazzy control and Gazebo Harmonic simulation.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \kern 3.0 pt%
-    \begin{twocolentry}{{Aug 2023 -- May 2024}\\}
-        \hrefWithoutArrow{https://ellishw.tech/projects/rocket-lqi/}{\textbf{LQI Rocket Landing Simulation} \faExternalLink}
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Landing a \textit{very simplified} simulated rocket in MATLAB using optimal control.
-            \item Designed a LQI controller for full-state feedback and setpoint tracking of a landing trajectory.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \kern 3.0 pt%
-    \begin{twocolentry}{{Dec 2023 -- May 2024}\\}
-        \hrefWithoutArrow{https://ellishw.tech/projects/closed-loop-stepper/}{\textbf{Closed Loop Stepper Motor} \faExternalLink}
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Backdrivable stepper motor driver using closed-loop control and a magnetic encoder for feedback.
-            \item 4-layer PCB mounts to the back of the motor with CAN and power connections.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
-    \kern 3.0 pt%
-    \begin{twocolentry}{{Oct 2020 -- Mar 2023}\\}
-        \hrefWithoutArrow{https://solarcaratvt.org}{\textbf{Design Teams | Solar Car \& Human Powered Submarine} \faExternalLink}
-        \begin{onecolentry}
-            \begin{highlights}
-            \item Overall E/E architecture of the Solar Car.
-            \item Single board computer and LCD to display relevant data to the submarine pilot.
-            \end{highlights}
-        \end{onecolentry}
-    \end{twocolentry}
+    {
+        \hrefWithoutArrow{https://ellishw.tech}{{ellishw.tech}}\\
+        \hrefWithoutArrow{https://github.com/hunterwellis}{{github.com/hunterwellis}}\\
+        \hrefWithoutArrow{https://www.linkedin.com/in/ellishw/}{linkedin.com/in/ellishw}
+    }
+    {
+        \Huge\textbf{{Hunter Ellis}}\\
+        \kern 3.0 pt%
+        \LARGE{\textbf{Electrical \& Computer Engineer}}
+    }
+\end{threecolentry}
+\hrule
+\kern 3.0 pt%
+Electrical and Computer Engineer interested in the intersection of control systems, robotics, and autonomy. 
+\kern 2.0 pt%
+
+\section{Technical Experience}
+\begin{twocolentry}{{Aug 2025 -- Present} \\\textit{Atlanta, Georgia}}
+    \textbf{Avionics Research Engineer}\\
+    \textit{Georgia Tech Research Institute $\cdot$ Applied Systems Lab}\\
+\end{twocolentry}
+\kern 2.0 pt%
+\begin{onecolentry}
+    \begin{highlights}
+        \item \lipsum[1][1-5]
+        \item \lipsum[1][6-10]
+        \item \lipsum[1][11-15]
+        \item \lipsum[1][16-20]
+        \item \lipsum[2][1-5]
+        \item \lipsum[2][6-10]
+    \end{highlights}
+\end{onecolentry}
+\kern 5.0 pt%
+
+\begin{twocolentry}{{Aug 2023 -- May 2025} \\\textit{Blacksburg, Virginia}}
+    \textbf{Robotics Researcher / M.S. Computer Engineering}\\
+    \textit{Virginia Tech $\cdot$ COOL Autonomy Lab}\\
+\end{twocolentry}
+\kern 2.0 pt%
+\begin{onecolentry}
+    \begin{highlights}
+    \item Built a 6-DOF robotic arm and accompanying ROS2–Gazebo \& MuJoCo simulation environments for training, evaluating, and deploying custom control algorithms.
+    \item Integrated object detection (YOLOv8), natural language processing, symbolic reasoning, and a DDPG-based reinforcement learning policy for robotic manipulation tasks.
+    \item Aided professors in teaching fundamental concepts in linear systems theory and digital signal processing, including Laplace Transforms, Z-Transforms, system stability, and FIR \& IIR filter design.
+            % \item Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI MSP432 development boards.
+    \end{highlights}
+\end{onecolentry}
+\kern 5.0 pt%
+
+\begin{twocolentry}{{May 2024 -- Aug 2024} \\\textit{Huntsville, Alabama}}
+    \textbf{Thrust Vector Control Intern}\\
+    \textit{Jacobs Space Exploration Group $\cdot$ Thrust Vector Control Lab}\\
+\end{twocolentry}
+\kern 2.0 pt%
+\begin{onecolentry}
+    \begin{highlights}
+    \item Developed thrust vector control testing hardware and software for NASA's Active Inertial Load (HIL) Simulator at the Marshall Space Flight Center.
+    \item Created and ran tests to develop a mathematical model of an electro-mechanical actuator -- used Python, MATLAB, and LabVIEW.
+            % \item Derived control algorithms for a load-simulating actuator, in Simulink, to simulate external loads placed on the thrust vector control actuators during flight. 
+            % \item Integrated IIR filters to reduce high frequency noise from a load cell and linear variable differential transformer (LVDT).
+    \end{highlights}
+\end{onecolentry}
+\kern 5.0 pt%
+
+\begin{twocolentry}{{Jun 2023 -- Aug 2023}\\ \textit{Grenoble, France}}
+    \textbf{Control Research Intern}\\
+    \textit{G2ELab $\cdot$ Power Electronics Lab}\\
+\end{twocolentry}
+\kern 2.0 pt%
+\begin{onecolentry}
+    \begin{highlights}
+    \item Researched microgrid inverter control systems -- designed to be robust to islanding events and avoid future infrastructure problems on the French power grid.
+            % \item Simulated neutral point capacitive and balancing topologies using 4-leg inverters in Simulink. Tested PI control, PR control, Clarke and Park Transforms with HIL simulations.
+    \end{highlights}
+\end{onecolentry}
+\kern 5.0 pt%
+
+\begin{twocolentry}{{Jun 2022 -- Aug 2022}\\\textit{West Bethesda, Maryland}}
+    \textbf{Concept Design Intern}\\
+    \textit{Naval Research Enterprise Internship Program $\cdot$ NSWC Carderock}\\
+\end{twocolentry}
+\kern 2.0 pt%
+\begin{onecolentry}
+    \begin{highlights}
+    \item Developed concept hospital sea-train designs and estimated fuel consumption and electrical power loads of the concept sea-trains.
+    \end{highlights}
+\end{onecolentry}
+\kern 2.0 pt%
+
+\section{Skills}
+\textbf{Software: }C/C++, Python, MATLAB, Simulink, GNU/Linux, Git, ROS2, Gazebo, Make, CMake, Labview, Qt,\\
+\quad\quad\quad\quad\ \ \ PyTorch, OpenCV, \LaTeX, Verilog, FreeRTOS, Autodesk Inventor (Certified), SolidWorks, Rhino\\
+\kern 5.0 pt%
+\textbf{Hardware: }PCB Design and Assembly, Breadboarding, Computer Architecture, Oscilloscope, Multimeter, 3D-Printing, \\
+\quad\quad\quad\quad\ \ \ \ \ Hardware-in-Loop Simulation
+\kern 2.0 pt%
+
+\section{Education}
+\begin{twocolentry}{{May 2025}\\\textit{Blacksburg, Virginia}}
+    % \textbf{Master of Science in Computer Engineering} (Accelerated Master's Program)\\
+    \textbf{Master of Science in Computer Engineering} \\
+    Virginia Tech -- Software and Machine Intelligence \\
+    % \quad\quad\textit{Advisors: }\hrefWithoutArrow{https://coolautonomylab.github.io/members/thinh.html}{{\textit{Dr. Thinh Doan (UT Austin)}}} and \hrefWithoutArrow{https://filebox.ece.vt.edu/~mhsiao/}{{\textit{Dr. Michael Hsiao (Virginia Tech)}}}\\
+\end{twocolentry}
+\kern 5.0 pt%
+\begin{twocolentry}{{May 2024}\\\textit{Blacksburg, Virginia}}
+    % \textbf{Bachelor of Science in Electrical \& Computer Engineering} (double major)\\
+    \textbf{Bachelor of Science in Electrical \& Computer Engineering} \\
+    Virginia Tech -- Control Systems and Machine Learning (double major)
+\end{twocolentry}
+\kern 2.0 pt%
+
+\section{Projects}
+\hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{6-DOF Robot Arm} \faExternalLink}
+\begin{onecolentry}
+    \begin{highlights}
+    \item 3D printed robot arm, built using stepper motors and pulleys.
+    \item Implemented ROS2 Jazzy control and Gazebo Harmonic simulation.
+    \end{highlights}
+\end{onecolentry}
+% \kern 5.0 pt%
+% \hrefWithoutArrow{https://ellishw.tech/projects/rocket-lqi/}{\textbf{LQI Rocket Landing Simulation} \faExternalLink}
+% \begin{onecolentry}
+%     \begin{highlights}
+%     \item Landing a \textit{very simplified} simulated rocket in MATLAB using optimal control.
+%     \item Designed a LQI controller for full-state feedback and setpoint tracking of a landing trajectory.
+%     \end{highlights}
+% \end{onecolentry}
+% \kern 5.0 pt%
+
+% \hrefWithoutArrow{https://ellishw.tech/projects/closed-loop-stepper/}{\textbf{Closed Loop Stepper Motor} \faExternalLink}
+%   \begin{onecolentry}
+%         \begin{highlights}
+%         \item Backdrivable stepper motor driver using closed-loop control and a magnetic encoder for feedback.
+%         \item 4-layer PCB mounts to the back of the motor with CAN and power connections.
+%         \end{highlights}
+%     \end{onecolentry}
+% \end{twocolentry}
+% \kern 5.0 pt%
+
+% \hrefWithoutArrow{https://solarcaratvt.org}{\textbf{Design Teams | Solar Car \& Human Powered Submarine} \faExternalLink}
+% \begin{onecolentry}
+%     \begin{highlights}
+%     \item Overall E/E architecture of the Solar Car.
+%     \item Single board computer and LCD to display relevant data to the submarine pilot.
+%     \end{highlights}
+% \end{onecolentry}
+\kern 2.0 pt%
+\section{Papers}
+\textbf{A Neuro-Symbolic Reinforcement Learning Architecture: Integrating Perception, Reasoning, and Control} -- Virginia Tech\\
+\textit{Master's Thesis, Jun 2025}
 \end{document}
