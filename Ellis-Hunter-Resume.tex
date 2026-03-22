@@ -1,4 +1,4 @@
-\documentclass[9pt, letterpaper]{extarticle}
+\documentclass[10pt, letterpaper]{extarticle}
 
 % Packages:
 \RequirePackage{fontawesome}
@@ -63,7 +63,7 @@ urlcolor=primaryColor
 \setlength{\columnsep}{0.15cm} % set column seperation
 \pagenumbering{gobble} % no page numbering
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\Large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
 \titlespacing{\section}{
     % left space:
@@ -76,7 +76,7 @@ urlcolor=primaryColor
     0.15 cm
 } % section title spacing
 
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$} % custom bullet points
 \newenvironment{highlights}{
     \begin{itemize}[
         topsep=0 pt,
@@ -165,20 +165,16 @@ urlcolor=primaryColor
         \hrefWithoutArrow{https://www.linkedin.com/in/ellishw/}{linkedin.com/in/ellishw}
     }
     {
-        \Huge\textbf{{Hunter Ellis}}\\
+        \LARGE\textbf{{Hunter Ellis}}\\
         \kern 5.0 pt%
-        \LARGE{\textbf{Autonomous Systems Engineer}}
+        \Large{\textbf{Autonomous Systems Engineer}}
     }
 \end{threecolentry}
-\kern -5.0 pt%
+\kern -19.0 pt%
+\section{}
+Autonomy Engineer with an interest in creating intelligent, capable platforms that can aid humanity.\\
 
-\section{Skills}
-\textbf{Languages: } C++, C, MATLAB,  Lua, \LaTeX \\
-\kern 3.0 pt%
-\textbf{Software: } Git, ROS2, OMPL, DDS, Qt, Simulink, FreeRTOS, Autodesk Inventor (Certified), SolidWorks, Rhino \\
-\kern 3.0 pt%
-\textbf{Hardware: } PCB Design, Breadboarding, Computer Architecture, Oscilloscope, Multimeter, 3D-Printing \\
-\kern 3.0 pt%
+\kern 2.0 pt%
 
 \section{Technical Experience}
 \begin{twocolentry}{\textbf{Aug 2025 -- Present} \\\textit{Atlanta, GA}}
@@ -188,14 +184,12 @@ urlcolor=primaryColor
 \kern 2.0 pt%
 \begin{onecolentry}
     \begin{highlights}
-        \item Developed C++ software for collaborative autonomous UAV swarms.
-        \item Git GNU/Linux and CMake C++14
-        \item Software systems integration\newline
+        \item Developing C++ software for collaborative autonomous UAV swarms. % Git GNU/Linux and CMake C++14
+        \item Integrate, develop, and benchmark sampling-based and optimization-based motion planning algorithms over constraint manifolds leveraging The Open Motion Planning Library (OMPL) and GeographicLib. % may be too wordy
+        \item Implement data association algorithms for multi-object tracking (MOT) using distributed camera data from vehicles in a decentralized swarm.\newline
         \item Embedded software development\newline
+        \item Software systems integration\newline
         \item Refactored legacy code to use DDS middleware.
-        \item Autopilot\newline
-        \item Integrated and benchmarked custom path planning algorithms using The Open Motion Planning Library (OMPL) and GeographicLib into collaborative autonomy software.
-        \item Implemented track association algorithms for multi-object tracking.\newline
     \end{highlights}
 \end{onecolentry}
 \kern 5.0 pt%
@@ -237,7 +231,7 @@ urlcolor=primaryColor
 \kern 2.0 pt%
 \begin{onecolentry}
     \begin{highlights}
-    \item Researched different inverter control methods for 4-leg (microgrid) topologies in Simulink and HIL simulation.
+    \item Implemented different inverter control methods for 4-leg (microgrid) topologies and tested them in Simulink and HIL.
             % \item Simulated neutral point capacitive and balancing topologies using 4-leg inverters in Simulink. Tested PI control, PR control, Clarke and Park Transforms with HIL simulations.
     \end{highlights}
 \end{onecolentry}
@@ -255,8 +249,16 @@ urlcolor=primaryColor
 \end{onecolentry}
 \kern 2.0 pt%
 
-\section{Projects}
+\section{Skills}
+\textbf{Languages: } C++, Python, MATLAB/Simulink, C, Lua, \LaTeX \\
+\kern 3.0 pt%
+\textbf{Tools and Libraries: } ROS2, OMPL, DDS, Qt, Simulink, Docker, Git, FreeRTOS, Autodesk Inventor (Certified), SolidWorks, Rhino \\
+\kern 3.0 pt%
+\textbf{Domain Knowledge: } multi-object tracking, sampling-based motion planning, Kalman filters, factor graphs \\
+\kern 2.0 pt%
 
+% \section{Projects}
+%
 % \begin{twocolentry}{}
 % \hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{SLAM FPV Drone Simulator} \faExternalLink}
 %     \begin{highlights}
@@ -265,16 +267,16 @@ urlcolor=primaryColor
 %     \end{highlights}
 % \end{twocolentry}
 % \kern 2.0 pt%
-
-\begin{twocolentry}{}
-\hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{6-DOF Robot Arm} \faExternalLink}
-    \begin{highlights}
-    \item 3D printed robot arm, built using stepper motors and pulleys.
-    \item Implemented ROS2 Jazzy control and Gazebo Harmonic simulation.
-    \end{highlights}
-\end{twocolentry}
-\kern 5.0 pt%
-
+%
+% \begin{twocolentry}{}
+% \hrefWithoutArrow{https://github.com/hunterwellis/Manipulator-Environment}{\textbf{6-DOF Robot Arm} \faExternalLink}
+%     \begin{highlights}
+%     \item 3D printed robot arm, built using stepper motors and pulleys.
+%     \item Implemented ROS2 Jazzy control and Gazebo Harmonic simulation.
+%     \end{highlights}
+% \end{twocolentry}
+% \kern 5.0 pt%
+%
 % \kern 5.0 pt%
 % \hrefWithoutArrow{https://ellishw.tech/projects/rocket-lqi/}{\textbf{LQI Rocket Landing Simulation} \faExternalLink}
 % \begin{onecolentry}
@@ -309,7 +311,7 @@ urlcolor=primaryColor
 
 \begin{twocolentry}{\textbf{May 2024}\\\textit{Blacksburg, VA}}
     % \textbf{Bachelor of Science in Electrical \& Computer Engineering} (double major)\\
-    \textbf{B.S. in Electrical \& Computer Engineering (Double Major)} \\
+    \textbf{B.S. in Electrical Engineering and Computer Engineering (Double Major)} \\
     \textit{Virginia Tech $\cdot$ Bradley Department of Electrical \& Computer Engineering}
 \end{twocolentry}
 \begin{onecolentry}
