@@ -4,10 +4,10 @@
 \RequirePackage{fontawesome}
 \usepackage[
 ignoreheadfoot, % set margins without considering header and footer
-top=1.0 cm, % seperation between body and page edge from the top
-bottom=1.0 cm, % seperation between body and page edge from the bottom
-left=1.2 cm, % seperation between body and page edge from the left
-right=1.2 cm, % seperation between body and page edge from the right
+top=1.25 cm, % seperation between body and page edge from the top
+bottom=1.25 cm, % seperation between body and page edge from the bottom
+left=1.75 cm, % seperation between body and page edge from the left
+right=1.75 cm, % seperation between body and page edge from the right
 footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
@@ -153,30 +153,22 @@ urlcolor=primaryColor
 }
 \newsavebox\ANDbox
 \sbox\ANDbox{$|$}
-\begin{threecolentry}
-    {
-        Atlanta, GA\\
-        \hrefWithoutArrow{tel:+1-703-953-6963}{(703) 953-6963}\\
-        \hrefWithoutArrow{mailto:elliswhunter@gmail.com}{elliswhunter@gmail.com}
-    }
-    {
-        \hrefWithoutArrow{https://ellishw.tech}{{ellishw.tech}}\\
-        \hrefWithoutArrow{https://github.com/hunterwellis}{{github.com/hunterwellis}}\\
-        \hrefWithoutArrow{https://www.linkedin.com/in/ellishw/}{linkedin.com/in/ellishw}
-    }
-    {
-        \LARGE\textbf{{Hunter Ellis}}\\
-        \kern 5.0 pt%
-        \Large{\textbf{Autonomous Systems Engineer}}
-    }
-\end{threecolentry}
-\kern -19.0 pt%
+\huge{\textbf{{Hunter Ellis}}}\\
+\normalsize
+\kern 2.5 pt%
+
+ \hrefWithoutArrow{tel:+1-703-953-6963}{(703) 953-6963} \ \ |
+ \ \ Atlanta, GA \ \ |
+ \ \ \hrefWithoutArrow{mailto:elliswhunter@gmail.com}{elliswhunter@gmail.com} \ \ |
+ \ \ \hrefWithoutArrow{https://github.com/hjkellis}{{github.com/hjkellis}} \ \ |
+ \ \ \hrefWithoutArrow{https://www.linkedin.com/in/ellishw/}{linkedin.com/in/ellishw} \ \ |
+ \ \ \hrefWithoutArrow{https://ellishw.tech}{{ellishw.tech}}
+
+\kern -15.0 pt%
 \section{}
-Autonomy Engineer with an interest in creating intelligent, capable platforms that can aid humanity.\\
+Autonomy Engineer with an interest in building intelligent, capable platforms.\\
 
-\kern 2.0 pt%
-
-\section{Technical Experience}
+\section{Experience}
 \begin{twocolentry}{\textbf{Aug 2025 -- Present} \\\textit{Atlanta, GA}}
     \textbf{Autonomous Systems Engineer}\\
     \textit{Georgia Tech Research Institute $\cdot$ Applied Systems Lab}\\
@@ -184,8 +176,8 @@ Autonomy Engineer with an interest in creating intelligent, capable platforms th
 \kern 2.0 pt%
 \begin{onecolentry}
     \begin{highlights}
-        \item Developing C++ software for collaborative autonomous UAV swarms. % Git GNU/Linux and CMake C++14
-        \item Integrate, develop, and benchmark sampling-based and optimization-based motion planning algorithms over constraint manifolds leveraging The Open Motion Planning Library (OMPL) and GeographicLib. % may be too wordy
+        \item Developing C++ software for collaborative autonomous UAV swarms in a component-based software engineering environment. % Git GNU/Linux and CMake C++14
+        \item Integrate, develop, and benchmark sampling-based and optimization-based motion planning algorithms over constraint manifolds leveraging The Open Motion Planning Library (OMPL). % may be too wordy
         \item Implement data association algorithms for multi-object tracking (MOT) using distributed camera data from vehicles in a decentralized swarm.\newline
         \item Embedded software development\newline
         \item Software systems integration\newline
@@ -247,7 +239,6 @@ Autonomy Engineer with an interest in creating intelligent, capable platforms th
     \item Developed concept hospital sea-train designs, estimated fuel consumption, and electrical power loads.
     \end{highlights}
 \end{onecolentry}
-\kern 2.0 pt%
 
 \section{Skills}
 \textbf{Languages: } C++, Python, MATLAB/Simulink, C, Lua, \LaTeX \\
@@ -255,7 +246,6 @@ Autonomy Engineer with an interest in creating intelligent, capable platforms th
 \textbf{Tools and Libraries: } ROS2, OMPL, DDS, Qt, Simulink, Docker, Git, FreeRTOS, Autodesk Inventor (Certified), SolidWorks, Rhino \\
 \kern 3.0 pt%
 \textbf{Domain Knowledge: } multi-object tracking, sampling-based motion planning, Kalman filters, factor graphs \\
-\kern 2.0 pt%
 
 % \section{Projects}
 %
