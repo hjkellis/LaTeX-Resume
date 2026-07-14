@@ -94,8 +94,9 @@ title_color: gray, body_color: black) = {
     [Developed a containerized motion planning service with hybrid planning using graph, sampling, and optimization methods.],
     [Integrating, developing, and benchmarking sampling-based motion planning algorithms over constraint manifolds -- leveraging The Open Motion Planning Library (OMPL).],
     // [Integrated multi-hypothesis tracking (MHT) software, including prediction and data association algorithms for multi-object tracking (MOT) in decentralized swarms with distributed sensor data.],
-    [Created a world model service for a collaborative-decentralized swarm.],
+    [Designed and developed a world model service for a collaborative-decentralized swarm.],
     [Wrote data association algorithms for multi-object tracking (MOT) and vehicle-to-vehicle track consensus.],
+    [Wrote distributed state-estimation data-association algorithms for distributed multi-sensor tracking.],
     [Software systems integration],
   ),
 
@@ -165,3 +166,14 @@ title_color: gray, body_color: black) = {
   [ROS2, OMPL, DDS, GNU/Linux, Git, Qt, Simulink, Docker, FreeRTOS, SOLIDWORKS, Autodesk Inventor]
 )
 
+#section(
+  [Projects],
+  [
+    #set text(weight: "bold", size: large)
+    Robotic Arm
+    #set text(weight: "regular", size: normal)
+    -- ROS2, OMPL, C++, Python\
+    - 3D printed robot arm, built using stepper motors and pulleys
+    - Implemented ROS2 Jazzy control and Gazebo Harmonic simulation
+  ]
+)
