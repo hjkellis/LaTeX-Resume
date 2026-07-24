@@ -1,7 +1,7 @@
 #let normal = 7pt
-#let large = normal * 1.2
-#let gray = luma(120)
-#let v_space = v(15pt)
+#let large = normal * 1.1
+#let gray = black
+#let v_space = v(12pt)
 
 #set page(
   paper: "a4",
@@ -9,7 +9,7 @@
 )
 
 #set text(
-  font: "juliamono",
+  font: "Nimbus Sans",
   size: normal,
 )
 
@@ -17,7 +17,7 @@
 title_color: gray, body_color: black) = {
   box()[
     #table(
-      columns: (1fr, 6fr),
+      columns: (1fr, 7fr),
       column-gutter: 25pt,
       stroke: none,
       align: (top+right, bottom+left),
@@ -78,17 +78,42 @@ title_color: gray, body_color: black) = {
   ]
 }
 
-// Heading
-#section([Hunter Ellis], [elliswhunter\@gmail.com #h(1fr) hjkellis.github.io #h(1fr) github.com/hjkellis #h(1fr) (703)-953-6963], title_color: black)
+#let projects(..exp) = {
+  exp.pos().map(e => e).join(v_space)
+}
 
-#section([Synopsis], [I am an Autonomy Engineer with experience developing software for motion planning, estimation, and control systems.])
+#let project(position, tools, ..desc) = {
+  let desc_items = desc.pos().map(d => [- #d]).join()
+  [
+    #set text(weight: "bold", size: large)
+    #position
+    #set text(weight: "regular", size: normal, fill: gray)
+    #tools
+    #set text(weight: "regular", size: normal, fill: black)
+    #desc_items
+  ]
+}
+
+// Heading
+#section([Hunter Ellis], [
+  #set text(weight: "regular", size: normal, fill: gray)
+  elliswhunter\@gmail.com #h(1fr) hjkellis.github.io #h(1fr) github.com/hjkellis #h(1fr) (703)-953-6963 ], title_color: black
+)
+
+#section([Synopsis],
+  [
+    #set text(weight: "regular", size: normal, fill: gray)
+    I am an Autonomy Engineer with experience developing software for motion planning, estimation, and control systems.
+  ]
+)
+
 // I have degrees in Electrical (B.S.) and Computer (M.S.) Engineering, and I am currently enrolled as an Aerospace (M.S.) Student at Georgia Tech.])
 
 // Experience
 #section([Experience], experiences(
 
   experience(
-    [Avionics Engineer], [Georgia Tech Research Institute],
+    [Avionics Research Engineer], [Georgia Tech Research Institute],
     [Aug 2025 to Present], [Atlanta, GA],
     [Developing C++ software for collaborative autonomous UAV swarms in a component-based software engineering environment.],
     [Developed a containerized motion planning service with hybrid planning using graph, sampling, and optimization methods.],
@@ -152,8 +177,8 @@ title_color: gray, body_color: black) = {
   ),
 
   education(
-    [B.S. Computer Engineering \
-     B.S. Electrical Engineering],
+    [B.S. Electrical & Computer Engineering \
+     (Double Major)],
     [Virginia Tech #h(12em) May 2024],
     [Focus: Controls, Robotics, and Autonomy]
   )
@@ -163,17 +188,26 @@ title_color: gray, body_color: black) = {
 // Tools
 #section(
   [Tools/Libs],
-  [ROS2, OMPL, DDS, GNU/Linux, Git, Qt, Simulink, Docker, FreeRTOS, SOLIDWORKS, Autodesk Inventor]
+  [
+    #set text(weight: "regular", size: normal, fill: gray)
+    ROS2, OMPL, DDS, GNU/Linux, Git, Qt, Simulink, Docker, FreeRTOS, SOLIDWORKS, Autodesk Inventor
+  ]
 )
 
 #section(
   [Projects],
-  [
-    #set text(weight: "bold", size: large)
-    Robotic Arm
-    #set text(weight: "regular", size: normal)
-    -- ROS2, OMPL, C++, Python\
-    - 3D printed robot arm, built using stepper motors and pulleys
-    - Implemented ROS2 Jazzy control and Gazebo Harmonic simulation
-  ]
+  projects(
+    project(
+      [Drone Swarm],
+      [ROS2, OMPL, C++, Python],
+      [3D printed robot arm, built using stepper motors and pulleys],
+      [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
+    ),
+    project(
+      [Robotic Arm],
+      [ROS2, OMPL, C++, Python],
+      [3D printed robot arm, built using stepper motors and pulleys],
+      [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
+    )
+  )
 )
