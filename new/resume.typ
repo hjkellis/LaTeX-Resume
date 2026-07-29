@@ -1,7 +1,7 @@
 #let normal = 7pt
 #let large = normal * 1.1
 #let gray = black
-#let v_space = v(12pt)
+#let v_space = v(10pt)
 
 #set page(
   paper: "a4",
@@ -17,8 +17,8 @@
 title_color: gray, body_color: black) = {
   box()[
     #table(
-      columns: (1fr, 7fr),
-      column-gutter: 25pt,
+      columns: (1fr, 6fr),
+      column-gutter: 20pt,
       stroke: none,
       align: (top+right, bottom+left),
       [
@@ -95,8 +95,11 @@ title_color: gray, body_color: black) = {
 }
 
 // Heading
-#section([Hunter Ellis], [
-  #set text(weight: "regular", size: normal, fill: gray)
+#section([
+  #set text(weight: "bold", size: normal*1.5, fill: gray)
+  Hunter Ellis
+], [
+  #set text(weight: "regular", size: large, fill: gray)
   elliswhunter\@gmail.com #h(1fr) hjkellis.github.io #h(1fr) github.com/hjkellis #h(1fr) (703)-953-6963 ], title_color: black
 )
 
@@ -120,6 +123,8 @@ title_color: gray, body_color: black) = {
     [Integrating, developing, and benchmarking sampling-based motion planning algorithms over constraint manifolds -- leveraging The Open Motion Planning Library (OMPL).],
     // [Integrated multi-hypothesis tracking (MHT) software, including prediction and data association algorithms for multi-object tracking (MOT) in decentralized swarms with distributed sensor data.],
     [Designed and developed a world model service for a collaborative-decentralized swarm.],
+    [Designed and developed a multi-object tracking (MOT) library for decentralized robot swarms using strategy design pattern],
+    [Implemented prediction and data association algorithms leveraging consensus algorithms],
     [Wrote data association algorithms for multi-object tracking (MOT) and vehicle-to-vehicle track consensus.],
     [Wrote distributed state-estimation data-association algorithms for distributed multi-sensor tracking.],
     [Software systems integration],
@@ -131,7 +136,7 @@ title_color: gray, body_color: black) = {
     [Built a 6-DOF robotic arm and an accompanying ROS2–Gazebo simulation environment for training, evaluating, and deploying custom control algorithms.],
     [Integrated object detection (YOLOv8), natural language processing, symbolic reasoning, and a DDPG-based reinforcement learning policy for robotic manipulation tasks.],
     [Aided professors in teaching fundamental concepts in linear systems theory and digital signal processing, including Laplace Transforms, Z-Transforms, system stability, and FIR & IIR filter design.],
-            [Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI MSP432 development boards.]
+            [Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI-MSP432 development boards.]
   ),
 
   experience(
@@ -157,17 +162,10 @@ title_color: gray, body_color: black) = {
 #section([Education], educations(
 
   // education(
-  //   [Georgia Tech],
   //   [M.S. Aerospace Engineering],
+  //   [Georgia Tech],
   //   [Focus: Flight Mechanics and Control]
   // ),
-  //
-  // education(
-  //   [Virginia Tech],
-  //   [M.S. Computer Engineering \
-  //    B.S. Electrical Engineering \
-  //    B.S. Computer Engineering],
-  // )
 
   education(
     [M.S. Computer Engineering],
@@ -198,7 +196,7 @@ title_color: gray, body_color: black) = {
   [Projects],
   projects(
     project(
-      [Drone Swarm],
+      [FPV Wingman],
       [ROS2, OMPL, C++, Python],
       [3D printed robot arm, built using stepper motors and pulleys],
       [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
