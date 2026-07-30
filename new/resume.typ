@@ -1,4 +1,4 @@
-#let normal = 7pt
+#let normal = 8pt
 #let large = normal * 1.1
 #let gray = black
 #let v_space = v(10pt)
@@ -17,7 +17,7 @@
 title_color: gray, body_color: black) = {
   box()[
     #table(
-      columns: (1fr, 6fr),
+      columns: (1fr, 5fr),
       column-gutter: 20pt,
       stroke: none,
       align: (top+right, bottom+left),
@@ -96,21 +96,19 @@ title_color: gray, body_color: black) = {
 
 // Heading
 #section([
-  #set text(weight: "bold", size: normal*1.5, fill: gray)
+  #set text(weight: "bold", size: normal*1.3, fill: gray)
   Hunter Ellis
 ], [
   #set text(weight: "regular", size: large, fill: gray)
   elliswhunter\@gmail.com #h(1fr) hjkellis.github.io #h(1fr) github.com/hjkellis #h(1fr) (703)-953-6963 ], title_color: black
 )
 
-#section([Synopsis],
-  [
-    #set text(weight: "regular", size: normal, fill: gray)
-    I am an Autonomy Engineer with experience developing software for motion planning, estimation, and control systems.
-  ]
-)
-
-// I have degrees in Electrical (B.S.) and Computer (M.S.) Engineering, and I am currently enrolled as an Aerospace (M.S.) Student at Georgia Tech.])
+// #section([Synopsis],
+//   [
+//     #set text(weight: "regular", size: normal, fill: gray)
+//     I am an Autonomy Engineer with experience developing software for motion planning, estimation, and control systems.
+//   ]
+// )
 
 // Experience
 #section([Experience], experiences(
@@ -197,7 +195,7 @@ title_color: gray, body_color: black) = {
   projects(
     project(
       [FPV Wingman],
-      [ROS2, OMPL, C++, Python],
+      [ROS2, OMPL, Nav2, C++, Python],
       [3D printed robot arm, built using stepper motors and pulleys],
       [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
     ),
