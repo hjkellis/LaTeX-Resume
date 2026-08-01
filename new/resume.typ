@@ -1,6 +1,6 @@
 #let normal = 8pt
 #let large = normal * 1.1
-#let gray = black
+#let gray = luma(70)
 #let v_space = v(10pt)
 
 #set page(
@@ -14,10 +14,10 @@
 )
 
 #let section(title, body,
-title_color: gray, body_color: black) = {
+title_color: black, body_color: black) = {
   box()[
     #table(
-      columns: (1fr, 5fr),
+      columns: (1fr, 6fr),
       column-gutter: 20pt,
       stroke: none,
       align: (top+right, bottom+left),
@@ -26,7 +26,7 @@ title_color: gray, body_color: black) = {
         #title
       ],
       [
-        #set text(weight: "regular", size: 8pt, fill: body_color)
+        #set text(weight: "regular", size: normal, fill: body_color)
         #body
       ],
     )
@@ -71,7 +71,7 @@ title_color: gray, body_color: black) = {
   [
     #set text(weight: "bold", fill: black)
     #school \
-    #set text(weight: "bold", size: normal, fill: gray)
+    #set text(weight: "regular", size: normal, fill: gray)
     #degree \
     #set text(weight: "light", size: normal, fill: black)
     #desc_items
@@ -87,8 +87,8 @@ title_color: gray, body_color: black) = {
   [
     #set text(weight: "bold", size: large)
     #position
-    #set text(weight: "regular", size: normal, fill: gray)
-    #tools
+    #set text(weight: "light", size: normal, fill: gray)
+    -- #tools
     #set text(weight: "regular", size: normal, fill: black)
     #desc_items
   ]
@@ -96,10 +96,10 @@ title_color: gray, body_color: black) = {
 
 // Heading
 #section([
-  #set text(weight: "bold", size: normal*1.3, fill: gray)
+  #set text(weight: "bold", size: normal*1.3, fill: black)
   Hunter Ellis
 ], [
-  #set text(weight: "regular", size: large, fill: gray)
+  #set text(weight: "regular", size: large, fill: black)
   elliswhunter\@gmail.com #h(1fr) hjkellis.github.io #h(1fr) github.com/hjkellis #h(1fr) (703)-953-6963 ], title_color: black
 )
 
@@ -134,7 +134,7 @@ title_color: gray, body_color: black) = {
     [Built a 6-DOF robotic arm and an accompanying ROS2–Gazebo simulation environment for training, evaluating, and deploying custom control algorithms.],
     [Integrated object detection (YOLOv8), natural language processing, symbolic reasoning, and a DDPG-based reinforcement learning policy for robotic manipulation tasks.],
     [Aided professors in teaching fundamental concepts in linear systems theory and digital signal processing, including Laplace Transforms, Z-Transforms, system stability, and FIR & IIR filter design.],
-            [Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI-MSP432 development boards.]
+    [Assisted with hands-on projects to illustrate and integrate analog and digital filter design and application on breadboards and TI-MSP432 development boards.]
   ),
 
   experience(
@@ -167,15 +167,15 @@ title_color: gray, body_color: black) = {
 
   education(
     [M.S. Computer Engineering],
-    [Virginia Tech #h(12em) May 2025],
+    [Virginia Tech -- 2025],
     [Focus: Software and Machine Intelligence],
     [Research Group: COOL Autonomy Lab \@ UT Austin]
   ),
 
   education(
-    [B.S. Electrical & Computer Engineering \
-     (Double Major)],
-    [Virginia Tech #h(12em) May 2024],
+    [B.S. Electrical Engineering\
+     B.S. Computer Engineering],
+    [Virginia Tech -- 2024],
     [Focus: Controls, Robotics, and Autonomy]
   )
 
@@ -185,7 +185,7 @@ title_color: gray, body_color: black) = {
 #section(
   [Tools/Libs],
   [
-    #set text(weight: "regular", size: normal, fill: gray)
+    #set text(weight: "regular", size: normal, fill: black)
     ROS2, OMPL, DDS, GNU/Linux, Git, Qt, Simulink, Docker, FreeRTOS, SOLIDWORKS, Autodesk Inventor
   ]
 )
