@@ -1,11 +1,11 @@
-#let normal = 8pt
+#let normal = 9pt
 #let large = normal * 1.1
 #let gray = luma(70)
 #let v_space = v(10pt)
 
 #set page(
   paper: "a4",
-  margin: (x: 0.5in, y: 0.5in),
+  margin: (x: 0.3in, y: 0.4in),
 )
 
 #set text(
@@ -96,36 +96,44 @@ title_color: black, body_color: black) = {
 
 // Heading
 #section([
-  #set text(weight: "bold", size: normal*1.3, fill: black)
+  #set text(weight: "bold", size: normal*1.2, fill: black)
   Hunter Ellis
 ], [
   #set text(weight: "regular", size: large, fill: black)
   elliswhunter\@gmail.com #h(1fr) hjkellis.github.io #h(1fr) github.com/hjkellis #h(1fr) (703)-953-6963 ], title_color: black
 )
 
-// #section([Synopsis],
-//   [
-//     #set text(weight: "regular", size: normal, fill: gray)
-//     I am an Autonomy Engineer with experience developing software for motion planning, estimation, and control systems.
-//   ]
-// )
+#section([Synopsis],
+  [
+    #set text(weight: "regular", size: normal, fill: black)
+    I am an Avionics Engineer with experience developing autonomy software for motion planning, estimation, and control systems.
+  ]
+)
 
 // Experience
+// Bullets should answer: What?, How?, Why?
 #section([Experience], experiences(
 
   experience(
     [Avionics Research Engineer], [Georgia Tech Research Institute],
     [Aug 2025 to Present], [Atlanta, GA],
     [Developing C++ software for collaborative autonomous UAV swarms in a component-based software engineering environment.],
-    [Developed a containerized motion planning service with hybrid planning using graph, sampling, and optimization methods.],
-    [Integrating, developing, and benchmarking sampling-based motion planning algorithms over constraint manifolds -- leveraging The Open Motion Planning Library (OMPL).],
+    [Created a containerized motion planning service with hybrid planning using graph, sampling, and optimization methods for use on fixed-wing UAVs.],
+    [Benchmarked motion planning algorithms -- leveraged The Open Motion Planning Library (OMPL).],
+    [Developed a multi-object tracking (MOT) algorithm for EO/IR sensors -- HITL tested and deployed it onto flight hardware.],
+    [Designed and implemented a track-to-track fusion system for decentralized tracking systems.],
+    // [Integrating, developing, and benchmarking sampling-based motion planning algorithms over constraint manifolds -- leveraging The Open Motion Planning Library (OMPL).],
     // [Integrated multi-hypothesis tracking (MHT) software, including prediction and data association algorithms for multi-object tracking (MOT) in decentralized swarms with distributed sensor data.],
-    [Designed and developed a world model service for a collaborative-decentralized swarm.],
-    [Designed and developed a multi-object tracking (MOT) library for decentralized robot swarms using strategy design pattern],
-    [Implemented prediction and data association algorithms leveraging consensus algorithms],
-    [Wrote data association algorithms for multi-object tracking (MOT) and vehicle-to-vehicle track consensus.],
-    [Wrote distributed state-estimation data-association algorithms for distributed multi-sensor tracking.],
-    [Software systems integration],
+    [Wrote state estimation algorithms for distributed multi-sensor tracking.],
+    [Refactored legacy software to use Distributed Data Service (DDS) middleware.],
+  ),
+
+  experience(
+    [Thrust Vector Control Intern], [Jacobs Space Exploration Group],
+    [May 2024 to Aug 2024], [Huntsville, AL],
+    [Developed hardware and software to test the thrust vector control system of NASA’s Mars Ascent Vehicle at the Marshall Space Flight Center.],
+    [Identified and modeled electro-mechanical actuator dynamics for NASA's Active Inertial Load Simulator using Python, MATLAB, and LabVIEW -- designed tests to characterize actuator response.],
+    [Integrated IIR filters to reduce high frequency noise from a load cell and LVDT.]
   ),
 
   experience(
@@ -138,15 +146,9 @@ title_color: black, body_color: black) = {
   ),
 
   experience(
-    [Thrust Vector Control Intern], [Jacobs Space Exploration Group],
-    [May 2024 to Aug 2024], [Huntsville, AL],
-    [Developed thrust vector control testing hardware and software for NASA's Active Inertial Load Simulator at the Marshall Space Flight Center.],
-    [Created and ran tests to develop a mathematical model of an electro-mechanical actuator -- used Python, MATLAB, and LabVIEW.]
-  ),
-
-  experience(
     [Control Research Intern], [Grenoble Electrical Engineering Lab], [Jun 2023 to Aug 2023], [Grenoble, FR],
-    [Implemented inverter control methods for 4-leg (microgrid) topologies and tested them in Simulink and HIL.]
+    [Implemented inverter control methods for 4-leg (microgrid) topologies and tested them in Simulink and HITL.],
+    [Simulated neutral point capacitive and balancing topologies using 4-leg inverters in Simulink. Tested PI control, PR control, Clarke and Park Transforms with HITL simulations.]
   ),
 
   experience(
@@ -168,13 +170,13 @@ title_color: black, body_color: black) = {
   education(
     [M.S. Computer Engineering],
     [Virginia Tech -- 2025],
-    [Focus: Software and Machine Intelligence],
+    [Focus: Signals and Systems],
     [Research Group: COOL Autonomy Lab \@ UT Austin]
   ),
 
   education(
-    [B.S. Electrical Engineering\
-     B.S. Computer Engineering],
+    [B.S. Computer Engineering\
+     B.S. Electrical Engineering],
     [Virginia Tech -- 2024],
     [Focus: Controls, Robotics, and Autonomy]
   )
@@ -190,20 +192,20 @@ title_color: black, body_color: black) = {
   ]
 )
 
-#section(
-  [Projects],
-  projects(
-    project(
-      [FPV Wingman],
-      [ROS2, OMPL, Nav2, C++, Python],
-      [3D printed robot arm, built using stepper motors and pulleys],
-      [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
-    ),
-    project(
-      [Robotic Arm],
-      [ROS2, OMPL, C++, Python],
-      [3D printed robot arm, built using stepper motors and pulleys],
-      [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
-    )
-  )
-)
+// #section(
+//   [Projects],
+//   projects(
+//     // project(
+//     //   [FPV Wingman],
+//     //   [ROS2, OMPL, Nav2, C++, Python],
+//     //   [3D printed robot arm, built using stepper motors and pulleys],
+//     //   [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
+//     // ),
+//     project(
+//       [Robotic Arm],
+//       [ROS2, OMPL, C++, Python],
+//       [3D printed robot arm, built using stepper motors and pulleys],
+//       [Implemented ROS2 Jazzy control and Gazebo Harmonic simulation]
+//     )
+//   )
+// )
